@@ -1,0 +1,37 @@
+// Copyright © 2025 Prabhjot Singh Sethi, All Rights reserved
+// Author: Prabhjot Singh Sethi <prabhjot.sethi@gmail.com>
+
+syntax = "proto3";
+
+package api;
+
+option go_package = "github.com/go-core-stack/location-services/api";
+
+// IP Location service provided over gRPC
+service IpLocation {
+  rpc GetLocation(LocationReq) returns (LocationResp) {}
+}
+
+message LocationReq {
+  string ip = 1;
+}
+
+message LocationResp {
+  // latitude of location
+  double latitude = 1;
+
+  // longitude of location
+  double longitude = 2;
+
+  // country info
+  string country = 3;
+
+  // region info
+  string region = 4;
+
+  // city
+  string city = 5;
+
+  // postal code
+  string postal = 6;
+}
