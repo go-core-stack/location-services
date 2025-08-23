@@ -1,0 +1,4 @@
+configDB:
+  uri: "mongodb://localhost:27017"
+swagger:
+  dir: ""
